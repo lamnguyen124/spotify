@@ -2,13 +2,13 @@ import java.time.Duration;
 
 public class Song {
 
-    private long id;
+    private Integer id;
     private String name;
     private Duration length;
     private String lyrics;
     private String[] artists;
 
-    public Song(long id, String name, Duration length, String lyrics, String[] artists) {
+    public Song(Integer id, String name, Duration length, String lyrics, String[] artists) {
         this.id = id;
         this.name = name;
         this.length = length;
@@ -16,11 +16,11 @@ public class Song {
         this.artists = artists;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,5 +54,13 @@ public class Song {
 
     public void setArtists(String[] artists) {
         this.artists = artists;
+    }
+
+    public String displayArtistAsText(){
+        String names = "";
+        for (String artist: this.getArtists()) {
+            names += artist +", ";
+        }
+        return names;
     }
 }
